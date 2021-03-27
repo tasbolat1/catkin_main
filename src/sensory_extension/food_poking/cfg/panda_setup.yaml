@@ -1,0 +1,69 @@
+saved_joint_values:
+  start:
+    panda_joint1: 0.014346704367107235
+    panda_joint2: -0.08199216431693027
+    panda_joint3: -0.04014778174214698
+    panda_joint4: -1.744772718379372  
+    panda_joint5: 0.030485444426536557
+    panda_joint6: 1.670511910641046   
+    panda_joint7: 1.5313037919840877
+  bin:
+    panda_joint1: 0.014346704367107235
+    panda_joint2: -0.08199216431693027
+    panda_joint3: -0.04014778174214698
+    panda_joint4: -1.744772718379372  
+    panda_joint5: 0.030485444426536557
+    panda_joint6: 1.670511910641046   
+    panda_joint7: 1.5313037919840877
+  start_pos30deg:
+    panda_joint1: 0.01497319075791982
+    panda_joint2: -0.032276893903811776
+    panda_joint3: -0.0020699843377751997
+    panda_joint4: -2.091595941362205  
+    panda_joint5: 0.29995416921
+    panda_joint6: 2.056839103233667
+    panda_joint7: 1.5392108367474329
+  hh_bin:
+    panda_joint1: 0.10987554695627146
+    panda_joint2: 0.421673488909738
+    panda_joint3: 0.5181551797932068
+    panda_joint4: -1.6430492044415388  
+    panda_joint5: -0.14959404791062905
+    panda_joint6: 1.9667659562958608   
+    panda_joint7: 2.316332978822313
+  start_neg30deg:
+    panda_joint1: 0.01497319075791982
+    panda_joint2: -0.032276893903811776
+    panda_joint3: -0.0020699843377751997
+    panda_joint4: -2.091595941362205  
+    panda_joint5: -0.39817753157
+    panda_joint6: 2.056839103233667
+    panda_joint7: 1.5392108367474329
+
+  start_new:
+    panda_joint1: 0.01497319075791982
+    panda_joint2: -0.032276893903811776
+    panda_joint3: -0.0020699843377751997
+    panda_joint4: -2.091595941362205  
+    panda_joint5: -0.39817753157 #-0.04911168117986784
+    panda_joint6: 2.056839103233667
+    panda_joint7: 1.5392108367474329
+  home:
+    panda_joint1: 0.0
+    panda_joint2: -0.78539816339
+    panda_joint3: 0.0
+    panda_joint4: -2.35619449019
+    panda_joint5: 0.0
+    panda_joint6: 1.57079632679
+    panda_joint7: 0.78539816339
+  home_robotiq:
+    panda_joint1: 0.0
+    panda_joint2: -0.78539816339
+    panda_joint3: 0.0
+    panda_joint4: -2.35619449019  
+    panda_joint5: 0.0
+    panda_joint6: 1.57079632679
+    panda_joint7: 1.57079632679
+
+
+

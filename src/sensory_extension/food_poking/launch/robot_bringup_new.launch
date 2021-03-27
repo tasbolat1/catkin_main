@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!DOCTYPE launch>
+<launch>
+  <arg name="robot_ip" default="172.16.0.3" />
+  <arg name="gripper" default="panda" /> <!-- robotiq -->
+
+  <!-- Set some project specific defaults for the panda arm. -->
+
+
+   <rosparam command="load" file="$(find food_poking)/cfg/panda_setup.yaml" ns="/panda_setup"/>
+  <node name="set_robot_defaults" pkg="franka_control_wrappers" type="set_panda_defaults.py"  respawn="false" output="screen">
+    <param name="gripper" type="str" value="$(arg gripper)"/>
+  </node>
+
+   <node pkg="tf2_ros" type="static_transform_publisher" name="virtual_joint_broadcaster_1" args="0 0 0 0 0 0 world panda_link0" />
+
+  <include file="$(find franka_control)/launch/franka_control.launch" >
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+    <arg name="load_gripper" default="$(eval arg('gripper') == 'panda')" />
+  </include>
+  
+  <include file="$(find panda_moveit_config)/launch/panda_moveit.launch">
+    <arg name="load_gripper" value="$(eval arg('gripper') == 'panda')" />
+  </include>
+
+  <include file="$(find franka_control_wrappers)/launch/cartesian_velocity_controller.launch">
+    <arg name="stopped" value="true" />
+  </include>
+
+
+  
+
+
+</launch>

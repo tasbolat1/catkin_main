@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!DOCTYPE launch>
+<launch>
+  <arg name="robot_ip" default="172.16.0.3" />
+  <arg name="gripper" default="panda" /> <!-- robotiq -->
+  <arg name="comport" default="/dev/ttyUSB1" />
+
+  <!-- Set some project specific defaults for the panda arm. -->
+  <rosparam command="load" file="$(find food_poking)/cfg/panda_setup.yaml" ns="/panda_setup"/>
+  <node name="set_robot_defaults" pkg="franka_control_wrappers" type="set_panda_defaults.py"  respawn="false" output="screen">
+    <param name="gripper" type="str" value="$(arg gripper)"/>
+  </node>
+
+   <node pkg="tf2_ros" type="static_transform_publisher" name="virtual_joint_broadcaster_1" args="0 0 0 0 0 0 world panda_link0" />
+
+  <include file="$(find franka_control)/launch/franka_control.launch" >
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+    <arg name="load_gripper" default="$(eval arg('gripper') == 'panda')" />
+  </include>
+  
+  <include file="$(find panda_moveit_config)/launch/panda_moveit.launch">
+    <arg name="load_gripper" value="$(eval arg('gripper') == 'panda')" />
+  </include>
+
+  <include file="$(find franka_control_wrappers)/launch/cartesian_velocity_controller.launch">
+    <arg name="stopped" value="true" />
+  </include>
+
+  <!-- <arg if="$(eval arg('gripper') == 'robotiq')" name="rviz_command_args" value="-d $(find mvp_grasping)/launch/panda_robotiq.rviz" />
+
+  <arg if="$(eval arg('gripper') == 'panda')" name="rviz_command_args" value="-d $(find mvp_grasping)/launch/panda.rviz" />
+
+  <node pkg="rviz" type="rviz" output="screen" name="rviz" args="$(arg rviz_command_args)">
+    <rosparam command="load" file="$(find panda_moveit_config)/config/kinematics.yaml"/>
+  </node>
+
+  <node if="$(eval arg('gripper') == 'panda')" pkg="tf" type="static_transform_publisher" name="realsense_link_broadcaster" args="0.040 -0.0175 0.066 3.1415 -1.571 0 /panda_hand /camera_link 100" /> -->
+
+<!--   <node if="$(eval arg('gripper') == 'robotiq')" pkg="tf" type="static_transform_publisher" name="realsense_link_broadcaster" args="-0.069 -0.014 0.055 0.711 -0.005 0.703 -0.007 /robotiq_arg2f_base_link /camera_link 100" /> -->
+</launch>

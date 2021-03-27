@@ -1,0 +1,8 @@
+prefix=/home/crslab/catkin_main/install
+
+Name: dougsm_helpers
+Description: Description of dougsm_helpers
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
