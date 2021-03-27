@@ -1,8 +1,0 @@
-prefix=/home/crslab/catkin_main/install
-
-Name: panda_examples
-Description: Description of panda_examples
-Version: 0.0.0
-Cflags: -I/usr/include/eigen3
-Libs: -L${prefix}/lib -linteractivity_utils
-Requires: 

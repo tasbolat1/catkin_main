@@ -1,8 +1,0 @@
-prefix=/home/crslab/catkin_main/devel
-
-Name: food_poking
-Description: Description of food_poking
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

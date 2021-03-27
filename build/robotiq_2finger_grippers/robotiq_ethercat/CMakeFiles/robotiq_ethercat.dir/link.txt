@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,librobotiq_ethercat.so -o /home/crslab/catkin_main/devel/lib/librobotiq_ethercat.so CMakeFiles/robotiq_ethercat.dir/src/ethercat_manager.cpp.o 
